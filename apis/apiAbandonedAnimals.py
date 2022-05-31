@@ -138,4 +138,4 @@ sido_df = getSidoData()
 
 # element = soup.select()
 
-getAbandonData("20210518", "20220518", list(sido_df.iloc[:, 0]))
+getAbandonData("20210101", "20211231", list(sido_df.iloc[:, 0]))
