@@ -25,6 +25,7 @@ engine = create_engine(f"mysql+mysqldb://{'root'}:{'autoset'}"\
 
 # a = cur.fetchall()
 
+# 지역 데이터 db 삽입
 def insertRegionInfo(): 
     df_regionCode = readCSV.df_regionCode
     df_familyIncome = readCSV.df_familyIncome
@@ -50,6 +51,7 @@ def insertRegionInfo():
 
     print("%s done" % insertRegionInfo.__name__)
 
+# 유기동물 데이터 db 삽입
 def insertAbandonedAnimal():
     df_abandonedAnimal = readCSV.df_abandonedAnimal
 
@@ -76,6 +78,7 @@ def insertAbandonedAnimal():
 
     print("%s done" % insertAbandonedAnimal.__name__)
 
+# 병원 데이터 db 삽입
 def insertHospital():
     df_animalHospital = readCSV.df_animalHospital
 
@@ -103,6 +106,7 @@ def insertHospital():
 
     print("%s done" % insertHospital.__name__)
 
+# 반려동물 데이터 db 삽입
 def insertPetData():
     df_petData = readCSV.df_petData
 
@@ -132,10 +136,12 @@ def insertPetData():
     print("%s done" % insertPetData.__name__)
 
 
+# db에 전체 데이터 넣을 때 1회 실행
+# '{함수명} done' 출력이 뜨면 된 것 -> 된 데이터는 주석처리하여 불필요한 작업 방지
 # insertRegionInfo()
 # insertHospital()
-insertAbandonedAnimal()
-insertPetData()
+# insertAbandonedAnimal()
+# insertPetData()
 
 cursor.close()
 conn.close()

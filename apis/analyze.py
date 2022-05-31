@@ -40,6 +40,7 @@ features = anal_data.iloc[:, 1:6]
 
 stats.pearsonr(features['petHosp_cnt'], features['abandoned_cnt'])
 
+# correlation 계산
 def corr_c(dataframe):
     col_length=len(dataframe.columns)
     idx_length=len(dataframe.index)
@@ -48,6 +49,7 @@ def corr_c(dataframe):
             dataframe.iloc[idx,col] = stats.pearsonr(features[feature_list[idx]], features[feature_list[col]])[0]
     return dataframe
             
+# p-value 계산
 def corr_p(dataframe):
     col_length=len(dataframe.columns)
     idx_length=len(dataframe.index)
@@ -70,6 +72,10 @@ corr_p_values.index = feature_list
 
 corr_p(corr_p_values)
 
+
+""" 
+각 인자에 대한 유기동물 수의 correlation, p-value 히트맵 및 그래프
+"""
 #correlation coefficient heatmap
 plt.figure(figsize=(5,5))
 plt.title("correlation coefficient")
@@ -83,19 +89,22 @@ sns.heatmap(corr_p_values, annot=True, fmt = '.5f', linewidths=.5, cmap='Reds')
 # plt.show()
 
 #Scatterplots for specific variables
+stats.pearsonr(features['petHosp_cnt'], features['abandoned_cnt'])
 sns.lmplot(x='petHosp_cnt', y='abandoned_cnt', data=features, line_kws={'color':"red"}, ci=None)
 plt.title("vs pet hospital")
 #plt.show()
 
-
+stats.pearsonr(features['income_lv'], features['abandoned_cnt'])
 sns.lmplot(x='income_lv', y='abandoned_cnt', data=features, line_kws={'color':"red"}, ci=None)
 plt.title("vs income level")
 #plt.show()
 
+stats.pearsonr(features['medi_expense'], features['abandoned_cnt'])
 sns.lmplot(x='medi_expense', y='abandoned_cnt', data=features, line_kws={'color':"red"}, ci=None)
 plt.title("vs medical expense")
 #plt.show()
 
+stats.pearsonr(features['pet_count'], features['abandoned_cnt'])
 sns.lmplot(x='pet_count', y='abandoned_cnt', data=features, line_kws={'color':"red"}, ci=None)
 plt.title("vs pet count")
 plt.show()

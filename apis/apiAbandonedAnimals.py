@@ -13,6 +13,8 @@ service = {
     "abandon" : "abandonmentPublic",
 }
 
+# 공공데이터에서 유기동물 등록 데이터 파싱
+
 api_key = '8EEsivQoU%2FF5gXtfrGxgoDUWv0TNSMcA6SK7TM2DJVyXCyoFescaNQMTQYvf2jYsGeFZcRyPkZanZTy6qd1HEw%3D%3D'
 api_key_decode = requests.utils.unquote(api_key)    
 params ={'ServiceKey' : api_key_decode}

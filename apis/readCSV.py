@@ -1,5 +1,7 @@
 import pandas as pd
 
+# parsing 하여 만든 csv파일 dataframe 변수화
+
 df_regionCode      = pd.read_csv('../csv/regionCode_encode.csv', encoding='utf-8')
 df_animalHospital  = pd.read_csv('../csv/animalHospital.csv', encoding='utf-8')
 df_familyIncome    = pd.read_csv('../csv/familyIncome.csv', encoding='utf-8')

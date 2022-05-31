@@ -9,6 +9,8 @@ import pandas as pd
 
 api_key = '58bb2b6449dec2d615750219cb8391a4f42efb1f7e16ad63bb45f73f57ef201c'
 
+# 공공데이터에서 반려동물 등록 데이터 파싱
+
 params = {
     'LVSTCK_KND': "고양이",
 }
