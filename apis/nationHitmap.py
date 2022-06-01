@@ -37,6 +37,7 @@ engine = create_engine(f"mysql+mysqldb://{'root'}:{'autoset'}"\
 # e = cursur.execute("select * from for_analyze")
 
 state_data = pd.read_sql(con=engine, sql="select * from for_analyze")    # db에서 for_analyze view 전달
+state_data = state_data.to_csv("analyzeData.csv", encoding='utf-8-sig')
 
  
 # Initialize the map:
